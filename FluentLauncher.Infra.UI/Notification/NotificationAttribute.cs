@@ -13,3 +13,12 @@ public class NotificationAttribute<TElement>() : Attribute
 
     public NotificationType Type { get; set; }
 }
+
+
+[AttributeUsage(AttributeTargets.Method)]
+public class ExceptionNotificationAttribute : Attribute
+{
+    public required string Title { get; set; }
+
+    public string? Message { get; set; }
+}
