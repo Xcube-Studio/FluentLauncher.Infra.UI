@@ -2,9 +2,12 @@
 
 public interface INotificationPresenter
 {
-    void Show(INotification notification);
-
-    void Close(INotification notification);
-
     void Clear();
+}
+
+public interface INotificationPresenter<TElement> : INotificationPresenter
+{
+    void Show(INotification<TElement> notification);
+
+    void Close(INotification<TElement> notification);
 }

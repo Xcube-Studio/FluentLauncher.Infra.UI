@@ -1,4 +1,6 @@
-﻿namespace FluentLauncher.Infra.UI.Notification;
+﻿using System;
+
+namespace FluentLauncher.Infra.UI.Notification;
 
 public interface INotification
 {
@@ -7,6 +9,15 @@ public interface INotification
     string Title { get; }
 
     string? Message { get; }
+
+    bool IsClosable { get; }
+
+    TimeSpan Delay { get; }
+}
+
+public interface INotification<out TElement> : INotification
+{
+    TElement ConstructUI();
 }
 
 public enum NotificationType

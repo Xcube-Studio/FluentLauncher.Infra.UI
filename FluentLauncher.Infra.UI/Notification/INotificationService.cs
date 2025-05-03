@@ -1,10 +1,10 @@
-﻿namespace FluentLauncher.Infra.UI.Notification;
+﻿using System.Collections.Generic;
+
+namespace FluentLauncher.Infra.UI.Notification;
 
 public interface INotificationService
 {
-    INotificationPresenter InfoBar { get; }
+    List<INotificationPresenter> Presenters { get; }
 
-    INotificationPresenter System { get; }
-
-    INotificationPresenter TeachingTip { get; }
+    void Show<TElement>(INotification<TElement> notification);
 }
