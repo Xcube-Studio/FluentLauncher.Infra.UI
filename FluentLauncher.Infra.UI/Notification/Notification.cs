@@ -12,7 +12,7 @@ public interface INotification
 
     bool IsClosable { get; }
 
-    TimeSpan Delay { get; }
+    double Delay { get; }
 }
 
 public interface INotification<out TElement> : INotification
