@@ -15,9 +15,22 @@ public interface IDialogActivationService<TResult>
     Task<TResult> ShowAsync(string key);
 
     /// <summary>
+    /// Shows a dialog with the given dialog ID and return a result.
+    /// </summary>
+    /// <param name="key">The key of the dialog to show.</param>
+    Task<(TResult, TDialogResult?)> ShowAsync<TDialogResult>(string key);
+
+    /// <summary>
     /// Shows a dialog with the given dialog ID.
     /// </summary>
     /// <param name="key">The key of the dialog to show.</param>
     /// <param name="param">Parameter passed to the dialog.</param>
     Task<TResult> ShowAsync(string key, object param);
+
+    /// <summary>
+    /// Shows a dialog with the given dialog ID and return a result.
+    /// </summary>
+    /// <param name="key">The key of the dialog to show.</param>
+    /// <param name="param">Parameter passed to the dialog.</param>
+    Task<(TResult, TDialogResult?)> ShowAsync<TDialogResult>(string key, object param);
 }
